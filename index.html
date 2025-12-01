@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Конференция: Подготовка педагогов как ресурс стратегического развития
+      профессионального образования
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      :root {
+        --primary: #3d88c8;
+        --secondary: #74b956;
+        --accent: #8db3e0;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-blue: #f0f7ff;
+      }
+
+      body {
+        color: var(--dark);
+        line-height: 1.6;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+        color: var(--light);
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      h2:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--secondary);
+        border-radius: 2px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 1.1rem;
+      }
+
+      .btn-primary {
+        background-color: var(--secondary);
+        color: white;
+        margin-right: 15px;
+      }
+
+      .btn-primary:hover {
+        background-color: #5a9c40;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(116, 185, 86, 0.2);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+      }
+
+      .btn-accent {
+        background-color: var(--primary);
+        color: white;
+        display: block;
+        margin: 40px auto 0;
+        width: fit-content;
+      }
+
+      .btn-accent:hover {
+        background-color: #2d6ca0;
+        transform: translateY(-3px);
+      }
+
+      /* Header & Hero */
+      header {
+        background: linear-gradient(
+            rgba(61, 136, 200, 0.9),
+            rgba(61, 136, 200, 0.95)
+          ),
+          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 20px 0 60px;
+        position: relative;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        z-index: 1001;
+      }
+
+      .logo i {
+        margin-right: 10px;
+        color: var(--secondary);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 30px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        font-size: 1.1rem;
+      }
+
+      .nav-links a:hover {
+        color: #d4edda;
+      }
+
+      /* Burger Menu */
+      .burger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .burger span {
+        height: 3px;
+        width: 25px;
+        background-color: white;
+        margin-bottom: 4px;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+
+      /* Organizers Logos in Header */
+      .header-organizers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-bottom: 40px;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .header-logo {
+        height: 50px;
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+        transition: all 0.3s;
+      }
+
+      .header-logo:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+
+      .hero-content {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero-content h1 {
+        margin-bottom: 20px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        color: #e2e8f0;
+        font-weight: 400;
+      }
+
+      .hero-info {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 40px;
+        font-size: 1.2rem;
+      }
+
+      .hero-info-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-info-item i {
+        margin-right: 10px;
+        color: var(--secondary);
+      }
+
+      /* About Section */
+      .about {
+        background-color: var(--light);
+      }
+
+      .about-content {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 50px;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+
+      .stats {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .stat-item {
+        text-align: center;
+        flex: 1;
+        min-width: 200px;
+        padding: 20px;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .stat-text {
+        color: var(--gray);
+        font-weight: 500;
+      }
+
+      .organizers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .organizer-logo {
+        height: 60px;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s;
+      }
+
+      .organizer-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      /* Topics Section */
+      .topics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .topic-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-top: 5px solid var(--secondary);
+      }
+
+      .topic-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .topic-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .topic-card h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      /* Audience Section */
+      .audience {
+        background-color: var(--light-blue);
+      }
+
+      .audience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .audience-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+
+      .audience-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .audience-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: var(--light-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 1.8rem;
+        color: var(--primary);
+      }
+
+      /* Program Section */
+      .program-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .tab-btn {
+        padding: 15px 30px;
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--gray);
+        cursor: pointer;
+        position: relative;
+        transition: color 0.3s;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .tab-btn.active {
+        color: var(--primary);
+      }
+
+      .tab-btn.active:after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary);
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .program-day {
+        background-color: white;
+        border-radius: 10px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .time-slots {
+        margin-top: 30px;
+      }
+
+      .time-slot {
+        display: flex;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .time {
+        font-weight: 600;
+        color: var(--primary);
+        min-width: 150px;
+      }
+
+      .event-details h3 {
+        color: var(--dark);
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .college-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid var(--secondary);
+      }
+
+      .college-card h3 {
+        color: var(--primary);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+      }
+
+      .college-link {
+        color: var(--secondary);
+        font-size: 0.9rem;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      /* Speakers Section */
+      .speakers {
+        background-color: var(--light);
+      }
+
+      .speakers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .speaker-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .speaker-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .speaker-img {
+        height: 200px;
+        background-color: #ddd;
+        background-image: url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .speaker-info {
+        padding: 20px;
+      }
+
+      .speaker-info h3 {
+        margin-bottom: 5px;
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      .speaker-role {
+        color: var(--secondary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+
+      /* Partners Section */
+      .partners-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 30px;
+      }
+
+      .partner-logo {
+        height: 70px;
+        filter: grayscale(100%);
+        opacity: 0.8;
+        transition: all 0.3s;
+      }
+
+      .partner-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      /* Location Section */
+      .location {
+        background-color: var(--light-blue);
+      }
+
+      .location-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .location-map {
+        height: 400px;
+        background-color: #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        background-image: url("https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-l+3D88C8(30.3350986,59.9342802)/30.3350986,59.9342802,12,0/600x400?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA5NXRqOTZxN3gifQ.-g_vE53SD2WrJ6tFX7QHmA");
+        background-size: cover;
+      }
+
+      .location-info h3 {
+        color: var(--primary);
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .location-list {
+        list-style: none;
+        margin-top: 20px;
+      }
+
+      .location-list li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+      }
+
+      .location-list i {
+        color: var(--secondary);
+        margin-right: 10px;
+      }
+
+      /* Registration Section */
+      .registration-form {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 10px;
+        padding: 50px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--dark);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border 0.3s;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary);
+        outline: none;
+      }
+
+      .checkbox-group {
+        margin-bottom: 15px;
+      }
+
+      .checkbox-group label {
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        cursor: pointer;
+      }
+
+      .checkbox-group input {
+        margin-right: 10px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--primary);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .footer-links h3,
+      .footer-contact h3 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #e2e8f0;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 400;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--secondary);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #e2e8f0;
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+
+      .hashtag {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 8px 15px;
+        border-radius: 50px;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        h1 {
+          font-size: 2.8rem;
+        }
+
+        h2 {
+          font-size: 2.2rem;
+        }
+
+        .location-content {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .header-organizers {
+          gap: 20px;
+        }
+
+        .header-logo {
+          height: 45px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          margin-bottom: 30px;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 70%;
+          height: 100vh;
+          background-color: var(--primary);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: right 0.5s ease;
+          z-index: 1000;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links li {
+          margin: 20px 0;
+        }
+
+        .nav-links a {
+          font-size: 1.3rem;
+        }
+
+        .burger {
+          display: flex;
+        }
+
+        .burger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .burger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        h1 {
+          font-size: 2.3rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        .hero-info {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .btn {
+          display: block;
+          margin-bottom: 15px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .btn-primary {
+          margin-right: 0;
+        }
+
+        .registration-form {
+          padding: 30px 20px;
+        }
+
+        .program-day {
+          padding: 20px;
+        }
+
+        .time-slot {
+          flex-direction: column;
+        }
+
+        .time {
+          margin-bottom: 10px;
+        }
+
+        .header-organizers {
+          gap: 15px;
+        }
+
+        .header-logo {
+          height: 40px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .topics-grid,
+        .audience-grid,
+        .speakers-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .stat-item {
+          min-width: auto;
+          width: 100%;
+          max-width: 250px;
+        }
+
+        .header-organizers {
+          gap: 12px;
+        }
+
+        .header-logo {
+          height: 35px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Hero Section -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            ПрофПедагоги24
+          </div>
+          <ul class="nav-links">
+            <li><a href="#about">О конференции</a></li>
+            <li><a href="#program">Программа</a></li>
+            <li><a href="#speakers">Спикеры</a></li>
+            <li><a href="#location">Место проведения</a></li>
+            <li><a href="#registration">Регистрация</a></li>
+          </ul>
+          <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+
+        <!-- 8 Logos in Header -->
+        <div class="header-organizers">
+          <img
+            src="https://via.placeholder.com/120x50/FFFFFF/3D88C8?text=Минпросвещения"
+            alt="Министерство просвещения"
+            class="header-logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x50/FFFFFF/3D88C8?text=РГПУ"
+            alt="РГПУ им. Герцена"
+            class="header-logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x50/FFFFFF/3D88C8?text=РАО"
+            alt="Российская академия образования"
+            class="header-logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x50/FFFFFF/3D88C8?text=Институт+развития"
+            alt="Институт развития профобразования"
+            class="header-logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x50/FFFFFF/3D88C8?text=Союз+директоров"
+            alt="Союз директоров СПО"
+            class="header-logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x50/FFFFFF/3D88C8?text=Ассоциация+колледжей"
+            alt="Ассоциация педагогических колледжей"
+            class="header-logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x50/FFFFFF/3D88C8?text=Президентская+академия"
+            alt="Президентская академия"
+            class="header-logo"
+          />
+          <img
+            src="https://via.placeholder.com/120x50/FFFFFF/3D88C8?text=Нац.союз"
+            alt="Национальный союз"
+            class="header-logo"
+          />
+        </div>
+
+        <div class="hero-content">
+          <h1>
+            Подготовка педагогов как ресурс стратегического развития
+            профессионального образования
+          </h1>
+          <p class="hero-subtitle">
+            Международная научно-практическая конференция
+          </p>
+          <div class="hero-info">
+            <div class="hero-info-item">
+              <i class="fas fa-calendar-alt"></i>
+              25-26 апреля 2024 г.
+            </div>
+            <div class="hero-info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              Санкт-Петербург
+            </div>
+            <div class="hero-info-item">
+              <i class="fas fa-hashtag"></i>
+              #ПрофПедагоги24
+            </div>
+          </div>
+          <div class="hero-buttons">
+            <a href="#registration" class="btn btn-primary">Участвовать</a>
+            <a href="#program" class="btn btn-secondary">Программа</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>Ежегодная площадка для развития системы СПО</h2>
+        <div class="about-content">
+          <p>
+            Конференция — это ключевое событие года для обсуждения стратегии,
+            выработки решений и обмена лучшими практиками по подготовке
+            педагогических кадров для системы профессионального образования.
+            Присоединяйтесь к лидерам отрасли!
+          </p>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-number">2</span>
+            <span class="stat-text">дня интенсивной работы</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">8+</span>
+            <span class="stat-text">стратегических секций</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">7+</span>
+            <span class="stat-text">ведущих колледжей для посещения</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-text">экспертов и практиков</span>
+          </div>
+        </div>
+        <div class="organizers">
+          <img
+            src="https://via.placeholder.com/150x60/3D88C8/FFFFFF?text=Минпросвещения"
+            alt="Минпросвещения РФ"
+            class="organizer-logo"
+          />
+          <img
+            src="https://via.placeholder.com/150x60/3D88C8/FFFFFF?text=РГПУ"
+            alt="РГПУ им. Герцена"
+            class="organizer-logo"
+          />
+          <img
+            src="https://via.placeholder.com/150x60/3D88C8/FFFFFF?text=РАО"
+            alt="Российская академия образования"
+            class="organizer-logo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section id="topics" class="topics">
+      <div class="container">
+        <h2>Ключевые вопросы, которые мы решаем</h2>
+        <div class="topics-grid">
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>Кадры для СПО</h3>
+            <p>
+              Как готовить, развивать и удерживать педагогические кадры в
+              системе среднего профессионального образования?
+            </p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Стратегия СПО</h3>
+            <p>
+              Направления развития СПО в контексте стратегии
+              социально-экономического развития страны.
+            </p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Оснащение и инновации</h3>
+            <p>
+              Учебное оборудование как источник педагогических инноваций в
+              системе СПО.
+            </p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Образование и работодатели</h3>
+            <p>
+              Синхронизация системы СПО и кадровых потребностей экономики как
+              ключевой вектор развития.
+            </p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Воспитание в колледжах</h3>
+            <p>
+              Особенности воспитательной деятельности и профориентации в
+              организациях СПО.
+            </p>
+          </div>
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3>Региональная специфика</h3>
+            <p>
+              Региональные и отраслевые особенности подготовки педагогических
+              кадров для системы СПО.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section id="audience" class="audience">
+      <div class="container">
+        <h2>Кому будет особенно полезно?</h2>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3>Руководители и преподаватели колледжей</h3>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="fas fa-university"></i>
+            </div>
+            <h3>Педагогические вузы и исследователи</h3>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <h3>Представители органов управления образованием</h3>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+            <h3>Работодатели и представители реального сектора</h3>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="fas fa-toolbox"></i>
+            </div>
+            <h3>Производители учебного оборудования</h3>
+          </div>
+          <div class="audience-card">
+            <div class="audience-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3>Эксперты WorldSkills</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="program">
+      <div class="container">
+        <h2>Программа конференции</h2>
+        <div class="program-tabs">
+          <button class="tab-btn active" data-tab="day1">
+            25 апреля (РГПУ)
+          </button>
+          <button class="tab-btn" data-tab="day2">26 апреля (Колледжи)</button>
+        </div>
+
+        <div id="day1" class="tab-content active">
+          <div class="program-day">
+            <h3>
+              Российский государственный педагогический университет им. А. И.
+              Герцена
+            </h3>
+            <p>Стратегические дискуссии, секции и круглые столы</p>
+
+            <div class="time-slots">
+              <div class="time-slot">
+                <div class="time">9:30 – 10:30</div>
+                <div class="event-details">
+                  <h3>Регистрация участников</h3>
+                  <p>Большое фойе Колонного зала. Приветственный кофе.</p>
+                </div>
+              </div>
+              <div class="time-slot">
+                <div class="time">10:30 – 12:30</div>
+                <div class="event-details">
+                  <h3>Пленарная дискуссия</h3>
+                  <p>
+                    "Подготовка педагогов как ресурс стратегического развития
+                    профессионального образования". Колонный зал.
+                  </p>
+                </div>
+              </div>
+              <div class="time-slot">
+                <div class="time">14:30 – 16:30</div>
+                <div class="event-details">
+                  <h3>Параллельные секции (8 направлений)</h3>
+                  <p>
+                    Трансформация подготовки педагогов, подготовка кадров:
+                    запросы колледжей, ЦОПП как инструмент развития, кадровый
+                    резерв системы СПО и др.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="day2" class="tab-content">
+          <div class="program-day">
+            <h3>День практического опыта в колледжах Санкт-Петербурга</h3>
+            <p>Экскурсии, обмен опытом, выездные секции и круглые столы</p>
+
+            <div class="college-card">
+              <h3>
+                Радиотехнический колледж
+                <a
+                  href="https://spb-rtk.ru/"
+                  class="college-link"
+                  target="_blank"
+                  >spb-rtk.ru</a
+                >
+              </h3>
+              <p>
+                Эффективные практики решения сложных ситуаций в детско-взрослом
+                коллективе колледжа и службы примирения
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+    <!-- Organizers & Partners Section -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <h2>Организаторы и партнеры</h2>
+            <div class="partners-container">
+                <div class="organizers-main">
+                    <div class="main-organizer">
+                        <img src="https://via.placeholder.com/200x80/3D88C8/FFFFFF?text=Министерство+просвещения+РФ" alt="Министерство просвещения РФ" class="main-organizer-logo">
+                        <h3>Министерство просвещения РФ</h3>
+                    </div>
+                    <div class="main-organizer">
+                        <img src="https://via.placeholder.com/200x80/3D88C8/FFFFFF?text=РГПУ+им.+А.И.+Герцена" alt="РГПУ им. А.И. Герцена" class="main-organizer-logo">
+                        <h3>РГПУ им. А.И. Герцена</h3>
+                    </div>
+                    <div class="main-organizer">
+                        <img src="https://via.placeholder.com/200x80/3D88C8/FFFFFF?text=Российская+академия+образования" alt="Российская академия образования" class="main-organizer-logo">
+                        <h3>Российская академия образования</h3>
+                    </div>
+                </div>
+                
+                <div class="other-partners">
+                    <img src="https://via.placeholder.com/150x60/74B956/FFFFFF?text=Институт+развития+профобразования" alt="Институт развития профессионального образования" class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/74B956/FFFFFF?text=Союз+директоров+СПО" alt="Союз директоров средних специальных учебных заведений России" class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/74B956/FFFFFF?text=Ассоциация+педколледжей" alt="Ассоциация педагогических колледжей" class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/74B956/FFFFFF?text=Президентская+академия" alt="Президентская академия" class="partner-logo">
+                    <img src="https://via.placeholder.com/150x60/74B956/FFFFFF?text=Национальный+союз" alt="Национальный союз предприятий индустрии" class="partner-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration">
+        <div class="container">
+            <h2>Регистрация на конференцию</h2>
+            <div class="registration-form">
+                <form id="conference-form">
+                    <div class="form-group">
+                        <label for="fullname">ФИО *</label>
+                        <input type="text" id="fullname" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="organization">Организация *</label>
+                        <input type="text" id="organization" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Должность *</label>
+                        <input type="text" id="position" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Я планирую посетить:</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="day1" value="25 апреля">
+                                25 апреля (Стратегические секции в РГПУ)
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="day2" value="26 апреля">
+                                26 апреля (Практические визиты в колледжи)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-accent">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        ПрофПедагоги24
+                    </div>
+                    <p>Международная научно-практическая конференция<br>
+                    «Подготовка педагогов как ресурс стратегического развития профессионального образования»</p>
+                    <div class="hashtag">#ПрофПедагоги24</div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="#about">О конференции</a></li>
+                        <li><a href="#program">Программа</a></li>
+                        <li><a href="#speakers">Спикеры</a></li>
+                        <li><a href="#partners">Организаторы</a></li>
+                        <li><a href="#registration">Регистрация</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Контакты</h3>
+                    <p>25-26 апреля 2024 г.<br>
+                    Санкт-Петербург, Россия</p>
+                    <p>Телефон: +7 (812) 123-45-67<br>
+                    Email: info@profpedagogi24.ru</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-organizers">
+                <img src="https://via.placeholder.com/120x40/FFFFFF/3D88C8?text=Минпросвещения" alt="Министерство просвещения" class="footer-organizer-logo">
+                <img src="https://via.placeholder.com/120x40/FFFFFF/3D88C8?text=РГПУ+им.+Герцена" alt="РГПУ им. Герцена" class="footer-organizer-logo">
+                <img src="https://via.placeholder.com/120x40/FFFFFF/3D88C8?text=РАО" alt="Российская академия образования" class="footer-organizer-logo">
+                <img src="https://via.placeholder.com/120x40/FFFFFF/3D88C8?text=Институт+развития" alt="Институт развития профобразования" class="footer-organizer-logo">
+            </div>
+            
+            <div class="copyright">
+                © 2024 Международная научно-практическая конференция «Подготовка педагогов как ресурс стратегического развития профессионального образования». Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Бургер-меню
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+        
+        // Табы программы
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Убираем активный класс у всех кнопок и контента
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Добавляем активный класс нажатой кнопке
+                btn.classList.add('active');
+                
+                // Показываем соответствующий контент
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Обработка формы регистрации
+        const form = document.getElementById('conference-form');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Здесь обычно отправка данных на сервер
+            alert('Спасибо за регистрацию! Мы свяжемся с вами в ближайшее время.');
+            form.reset();
+        });
+        
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
